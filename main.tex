@@ -3,32 +3,26 @@
 %----------------------------------------------------------------------------------------
 \documentclass[xcolor=dvipsnames]{beamer}
 
-\usepackage[scale=1.24]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage[scale=1.24]{beamerposter}
 \usepackage{graphicx}
 \usepackage{multirow}
-
 \usepackage{array}
 \usepackage{tabu}
-
-\usetheme{confposter} % Use the confposter theme supplied with this template
+\usepackage{graphicx} 
+\usepackage{booktabs} 
+\usetheme{confposter} 
 
 \definecolor{cadet}{rgb}{0.33, 0.41, 0.47}
 \definecolor{cadetgrey}{rgb}{0.57, 0.64, 0.69}
 \definecolor{bostonunivred}{rgb}{0.9, 0.0, 0.0}
 \definecolor{aliceblue}{rgb}{0.94, 0.97, 1.0}
-\setbeamercolor{block title}{fg=cadet,bg=white} % Colors of the block titles
-\setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
-\setbeamercolor{block alerted title}{fg=white,bg=cadetgrey} % Colors of the highlighted block titles
-\setbeamercolor{block alerted body}{fg=black,bg=dblue!10} % Colors of the body of highlighted blocks
-% Many more colors are available for use in beamerthemeconfposter.sty
+
+\setbeamercolor{block title}{fg=cadet,bg=white}
+\setbeamercolor{block body}{fg=black,bg=white}
+\setbeamercolor{block alerted title}{fg=white,bg=cadetgrey}
+\setbeamercolor{block alerted body}{fg=black,bg=dblue!10}
 
 %-----------------------------------------------------------
-% Define the column widths and overall poster size
-% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
-% In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
-% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
-% Set twocolwid to be (2*onecolwid)+sepwid = 0.464
-% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
 
 \setlength\parindent{24pt}
 \newlength{\sepwid}
@@ -42,10 +36,6 @@
 \setlength{\twocolwid}{0.464\paperwidth} % Width of two columns
 \setlength{\threecolwid}{0.708\paperwidth} % Width of three columns
 \setlength{\topmargin}{-0.5in} % Reduce the top margin size
-%-----------------------------------------------------------
-
-\usepackage{graphicx} 
-\usepackage{booktabs} 
 
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION 
@@ -53,7 +43,7 @@
 
 \title{Predicting Florida Presidential Election Vote Shares} % Poster title
 
-\author{{\huge Sam Yard}} % Author(s)
+\author{{\huge Sam Yard}}
 
 
 %----------------------------------------------------------------------------------------
@@ -75,7 +65,7 @@
 \begin{column}{\onecolwid} % The first column
 
 %----------------------------------------------------------------------------------------
-%	OBJECTIVES
+%	RESEARCH QUESTION AND BACKGROUND
 %----------------------------------------------------------------------------------------
 
 \begin{alertblock}{Research Question}
@@ -87,6 +77,7 @@
 \end{alertblock}
 
 %----------------------------------------------------------------------------------------
+%       HYPOTHESES ------------------------------------------------------------------------------------%%%%%%%
 
 \begin{block}{Hypothesis Testing}
 \textbf{Linear Model: } \newline
@@ -105,9 +96,9 @@ $H_0: \beta_{pop\_poc} = 0$
  \hline
  & Estimate &Std.Error &t-value & Pr(>|t|)\\
  \hline
- Intercept   & 3.292e+0    &1.557&   21.146 & < 2e-16\\
+ Intercept   & 3.271e+01    &1.569e+00&  20.847 & < 2e-16\\
  \hline
- $pop\_poc$ &   1.977e-05  & 4.265e-06   &4.635 & 1.77e-05\\
+ $pop\_poc$ &  1.995e-05  & 4.266e-06  &4.676 & 1.56e-05\\
  \hline
 \end{tabular}
 
@@ -132,9 +123,9 @@ $H_0: \beta_{pop\_poc} = 0$
 \textbf{Linear Model:} 
 
 $rep\_votes \sim median\_housing\_price$ \\ \newline
-\item[\textcolor{black}{\textbullet}] The null hypothesis for the coefficient associated with the variable $median\_housing\_price$ is: \\
+\item [\textcolor{black}{\textbullet}] The null hypothesis for the coefficient associated with the variable $median\_housing\_price$ is: \\
 $$H_0: \beta_{median\_housing\_price} = 0$$
-\item[\textcolor{black}{\textbullet}]Associated Model Results:
+\item [\textcolor{black}{\textbullet}] Associated Model Results:
 
 \end{itemize}    
 
@@ -147,15 +138,15 @@ $$H_0: \beta_{median\_housing\_price} = 0$$
  \hline
  & Estimate &Std.Error &t-value & Pr(>|t|)\\
  \hline
- Intercept   & -2.806e+04    &2.688e+04&   -1.044  & 0.3\\
+ Intercept   & -8.208e+04    &2.710e+04&   -3.029  & 0.00353\\
  \hline
- $mhp$ &   6.129e-01  &1.329e-01   &4.612 & 1.93e-05\\
+ $mhp$ &   9.406e-01  &1.412e-01   &6.660 & 7.33e-09\\
  \hline
 \end{tabular}
 \newline
 
 \begin{quote}
-\textcolor{white}{\textbullet}This model reveals a significant positive correlation between median housing prices and Republican (0.613, p < 0.00001) votes. These findings suggest that housing affordability, reflected in median prices, may influence political preferences. The interplay of socio-economic factors in shaping electoral dynamics is evident. However, caution is warranted, as correlation does not imply causation. Further research considering additional variables is crucial for a comprehensive understanding of the relationship between housing prices and political preferences in Florida counties.
+\textcolor{white}{\textbullet}This model reveals a significant positive correlation between median housing prices and Republican (0.941, p < 0.00001) votes. These findings suggest that housing affordability, reflected in median prices, may influence political preferences. The interplay of socio-economic factors in shaping electoral dynamics is evident. However, caution is warranted, as correlation does not imply causation. Further research considering additional variables is crucial for a comprehensive understanding of the relationship between housing prices and political preferences in Florida counties.
 
 
 
@@ -174,7 +165,7 @@ $$H_0: \beta_{median\_housing\_price} = 0$$
 \begin{column}{\onecolwid}\vspace{-.6in} % The second column within column 2 (column 2.2)
 
 %----------------------------------------------------------------------------------------
-%	METHODS
+%	DEMOGRAPHIC BREAKDOWN
 %----------------------------------------------------------------------------------------
 
 \begin{block}{Demographic Impact}
@@ -190,24 +181,25 @@ $$H_0: \beta_{median\_housing\_price} = 0$$
  \hline
  \multicolumn{5}{|c|}{Average Demographics of Bottom 5 Counties} \\
  \hline
- & Dem Vote Share &White Pop &PoC Pop & House Cost\\
+ & Dem Vote Share &White Pop &PoC Pop & House Income\\
  \hline
- Bottom 5 counties   & 14.414\%    &78.54\%&   21.46\% & \$110,500\\
+ Bottom 5 counties   & 14.414\%    &78.54\%&   21.46\% & \$50,012\\
  \hline
 
 \end{tabular}
 \newline
 \newline
 Bottom Five Counties: Holmes, Lafayette, Baker, Dixie, Union
+
 \newline
 \begin{tabular}{ |p{5.2cm}|p{5.9cm}|p{5cm}|p{4.2cm}|p{5cm}|}
 
  \hline
  \multicolumn{5}{|c|}{Average Demographics of Top 5 Counties} \\
  \hline
- & Dem Vote Share &White Pop &PoC Pop & House Cost\\
+ & Dem Vote Share &White Pop &PoC Pop & House Income\\
  \hline
- Bottom 5 counties   & 63.86\%    &40.01\% &  59.99\%  & \$210,560\\
+ Bottom 5 counties   & 63.86\%    &40.01\% &  59.99\%  & \$53,647\\
  \hline
 
 \end{tabular}
@@ -227,43 +219,7 @@ The top five counties in Florida exhibit a strong Democratic vote share, and ref
 
 \end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
 
-%----------------------------------------------------------------------------------------
-%	IMPORTANT RESULT
-%----------------------------------------------------------------------------------------
-
-
-
-%----------------------------------------------------------------------------------------
-
 \begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column again
-
-%\begin{column}{\onecolwid} % The first column within column 2 (column 2.1)
-
-%----------------------------------------------------------------------------------------
-%	MATHEMATICAL SECTION
-%----------------------------------------------------------------------------------------
-
-
-%----------------------------------------------------------------------------------------
-
-%\end{column} % End of column 2.1
-
-%\begin{column}{\onecolwid} % The second column within column 2 (column 2.2)
-
-%----------------------------------------------------------------------------------------
-%	RESULTS
-%----------------------------------------------------------------------------------------
-
-%\begin{block}{Results}
-
-%The cache compression coverage is grouped into low, medium, medium-high \& high coverage groups. The confusion matrix below evinces the performance of test set data true vs predictions.
-
-
-%\end{block}
-
-%----------------------------------------------------------------------------------------
-
-%\end{column} % End of column 2.2
 
 \end{columns} % End of the split of column 2
 
@@ -276,31 +232,37 @@ The top five counties in Florida exhibit a strong Democratic vote share, and ref
 
 
 %----------------------------------------------------------------------------------------
-%	CONCLUSION
-%----------------------------------------------------------------------------------------
+%	RACE HEATMAP
+%----------------------------------------------------------------------------------------a
+\begin{block}{2020 Population Heatmap by Race}
 
-\begin{block}{Conclusions}\\
-\begin{quote}
-    The model findings suggest that demographic factors related to the population of people of color play a significant role in shaping Democratic electoral support, emphasizing the importance of considering such demographic dynamics in understanding and predicting political preferences in the studied region during the 2020 presidential elections and beyond.
-\end{quote}
-\newline
-\begin{quote}
-    For predicting future elections in Florida, recognizing the influence of socio-economic factors, particularly household income, may be crucial. Policymakers and analysts could consider these economic dynamics when devising strategies and forecasts. Nevertheless, the intricate nature of political choices underscores the need for a comprehensive understanding that incorporates various contributing factors.
-\end{quote}
-
+\begin{figure}
+\includegraphics[trim={2.45cm 1.4cm 2.25cm 1.2cm},clip,scale=2.7]{poc_heatmap.pdf}
+\caption{Florida Heatmap for Population of People of Color by County}
+\end{figure}
 \end{block}
 
 %----------------------------------------------------------------------------------------
-%	ADDITIONAL INFORMATION
+%	CONCLUSION
 %----------------------------------------------------------------------------------------
+\begin{block}{Conclusions}\\
+\begin{quote}
+The models indicate that demographic factors, especially those related to race and the economy, significantly impact Democratic electoral support. Understanding these dynamics is crucial for predicting political preferences in different US regions during large-scale elections.
+\end{quote}
+\newline
+\begin{quote}
+For future elections in Florida, socio-economic factors are important considerations. Policymakers and analysts should incorporate these economic dynamics into strategies and forecasts, recognizing the complex nature of political choices. However, it is essential that we consider the entire picture, including various other factors, as the model results do not imply causation.
+\end{quote}
+\end{block}
 
 
-%	CONTACT INFORMATION
-
-
+%----------------------------------------------------------------------------------------
+%	CONTACT
+%----------------------------------------------------------------------------------------
 \begin{alertblock}{Contact Information}
-
- • samyard@bu.edu
+\begin{enumerate}
+    \item [\textcolor{black}{\textbullet}]samyard@bu.edu
+\end{enumerate}
 
 \end{alertblock}
 
